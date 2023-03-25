@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@fastify-nx-technical-test/api/modules": ["libs/api/modules/src/index.ts"],
+      "@fastify-nx-technical-test/apps/shared": ["apps/shared/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

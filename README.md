@@ -71,3 +71,7 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 * Run `npx nx g @nrwl/node:library library_name --director=modules` or generate library with NX plugin
 * Run `nx serve workspace_name` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+# library addition
+* Run `npm i prisma` to orm database
+* Run `npm i fastify-zod"` to schema validation with static type inference
+* Run `npm i fastify/swagger` to openAPI schema
