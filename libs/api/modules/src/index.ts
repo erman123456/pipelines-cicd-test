@@ -1,2 +1,3 @@
-export * from './lib/api-news';
-export * from './lib/api-topic';
+export * from './lib/news/api-news';
+export * from './lib/topic/api-topic';
+export * from './lib/utils/prisma';
