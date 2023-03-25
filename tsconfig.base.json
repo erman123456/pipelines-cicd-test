@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@fastify-nx-technical-test/api/modules": ["libs/api/modules/src/index.ts"],
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
