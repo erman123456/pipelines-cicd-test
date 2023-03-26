@@ -23,7 +23,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - checkout
       - run: npm rebuild
-      - run: npm cache clean 
+      - run: npm cache clean --force
       - run: prisma migrate reset
       - run: prisma migrate dev
       - save_cache:
