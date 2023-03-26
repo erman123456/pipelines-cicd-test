@@ -24,6 +24,7 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-deps-{{ checksum "package.json" }}
+      - run: npm cache clean --force
       - run: npm install
       - run: npm install && npm install -g prisma
       - run: prisma deploy
