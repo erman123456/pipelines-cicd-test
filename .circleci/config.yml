@@ -5,6 +5,11 @@ workflows:
       - test
 jobs:
   test:
+    prisma:
+      image: prismagraphql/prisma:__LATEST_PRISMA_VERSION__
+      restart: always
+      ports:
+        - '4466:4466'
     docker:
       - image: cimg/node:10.23
       - image: cimg/postgres:10.17
