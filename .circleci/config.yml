@@ -22,8 +22,6 @@ jobs:
           name: Waiting for Postgres to be ready
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - checkout
-      - restore_cache:
-          key: v1-deps-{{ checksum "package.json" }}
       - run: npm install
       - run: prisma migrate reset
       - run: prisma migrate dev
