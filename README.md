@@ -40,16 +40,8 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 * News CRUD
 * Topic CRUD
 * Authentication
-* Request & response validation
+* Request & response validation (Schema)
 * Swagger docs
-
-# Testing
-## What are we testing with?
-* [Node Tap](https://node-tap.org/) - Test framework
-* [fastify.inject](https://www.fastify.io/docs/latest/Guides/Testing/#benefits-of-using-fastifyinject) - Inject HTTP requests
-* [faker-js](@faker-js/faker) - Generate test data
-* [ts-mock-imports](https://www.npmjs.com/package/ts-mock-imports) - Mock imports
-
 
 ## Where can I learn more about testing Fastify?
 * [Unit Test Patterns And Strategies](https://github.com/knockaway/unit-test-patterns-and-strategies)
@@ -70,8 +62,13 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 * Run `mkdir modules` as feature dir
 * Run `npx nx g @nrwl/node:library library_name --director=modules` or generate library with NX plugin
 * Run `nx serve workspace_name` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+* Run `nx e2e api-e2e (e2e project)` to run test api e2e
 
 # library addition
 * Run `npm i prisma` to orm database
 * Run `npm i fastify-zod"` to schema validation with static type inference
 * Run `npm i fastify/swagger` to openAPI schema
+
+# how do I try project run well?
+* After run project open url : `http://localhost:3000/swagger/` fastify test server
+* Base url `http://localhost:3000/api/` to test using postman or insomnia
