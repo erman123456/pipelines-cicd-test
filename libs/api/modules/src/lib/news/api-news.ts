@@ -23,7 +23,13 @@ export const apiNews: FastifyPluginAsync = async (fastify: FastifyInstance) => {
   );
   fastify.get(
     "/",
-    (request, reply) => findAllHandler(reply)
+    {
+      schema: newsSchema.filter
+    },
+    (request:any, reply) => {
+      const queryParam = request.query
+      findAllHandler(queryParam, reply)
+    }
   );
   fastify.get(
     "/:id",

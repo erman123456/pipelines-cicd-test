@@ -13,7 +13,7 @@ CREATE TABLE "News" (
 -- CreateTable
 CREATE TABLE "Topic" (
     "id" TEXT NOT NULL,
-    "article_name" VARCHAR(255) NOT NULL,
+    "topic_name" VARCHAR(255) NOT NULL,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,

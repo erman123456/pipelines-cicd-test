@@ -39,9 +39,9 @@ export async function updateNewsHandler(
   }
 }
 
-export async function findAllHandler(reply: FastifyReply) {
+export async function findAllHandler(queryParam, reply: FastifyReply) {
   try {
-    const data = await findAll();
+    const data = await findAll(queryParam);
     responseType.status = HttpStatusTransaction.CODE_SUCCESS
     responseType.message = "Success"
     responseType.payload = data

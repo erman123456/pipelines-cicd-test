@@ -26,7 +26,7 @@ const schemaBody = {
             items: {
               type: 'object',
               properties: {
-                article_name: {type: 'string'},
+                topic_name: {type: 'string'},
                 description: {type: 'string'},
               },
             },
@@ -65,8 +65,24 @@ const schemaEdit = {
     }
   },
 }
+const filter = {
+  querystring: {
+    type: 'object',
+    properties: {
+      draft_status: {
+        type: 'boolean',
+        description: 'status of either ‘draft’, ‘deleted’ or ‘published’. Select true if publish'
+      },
+      topic_name: {
+        type: 'string',
+        description: 'Filter by Topic name'
+      }
+    }
+  }
+}
 export const newsSchema = {
   schemaId,
   schemaBody,
-  schemaEdit
+  schemaEdit,
+  filter
 }

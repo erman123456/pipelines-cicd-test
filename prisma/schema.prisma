@@ -21,12 +21,12 @@ model News {
 }
 
 model Topic {
-  id           String    @id @default(uuid())
-  article_name String    @db.VarChar(255)
-  description  String?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-  deletedAt    DateTime?
-  news         News      @relation(fields: [newsId], references: [id])
-  newsId       String
+  id          String    @id @default(uuid())
+  topic_name  String    @db.VarChar(255)
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  news        News      @relation(fields: [newsId], references: [id])
+  newsId      String
 }
