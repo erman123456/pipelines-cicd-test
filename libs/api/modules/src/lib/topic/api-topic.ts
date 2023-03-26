@@ -37,7 +37,7 @@ export const apiTopic: FastifyPluginAsync = async (fastify: FastifyInstance) => 
       schema: topicSchema.schemaId
     },
     (request: any, reply) => {
-      const id = parseInt(request.params.id);
+      const id = request.params.id;
       findOneHandler(id, reply);
     }
   );
@@ -47,7 +47,7 @@ export const apiTopic: FastifyPluginAsync = async (fastify: FastifyInstance) => 
       schema: topicSchema.schemaId
     },
     (request: any, reply) => {
-      const id = parseInt(request.params.id);
+      const id = request.params.id;
       deleteHandler(id, reply);
     }
   );

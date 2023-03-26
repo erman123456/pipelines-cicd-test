@@ -1,3 +1,6 @@
+import {any} from "zod";
+import {topicSchema} from "../topic/topic.schema";
+
 const schemaId = {
   params: {
     type: 'object',
@@ -15,6 +18,21 @@ const schemaBody = {
     properties: {
       title: {type: 'string'},
       description: {type: 'string'},
+      topic: {
+        type: 'object',
+        properties: {
+          create: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                article_name: {type: 'string'},
+                description: {type: 'string'},
+              },
+            },
+          }
+        }
+      }
     },
   }
 }
@@ -24,7 +42,7 @@ const schemaEdit = {
     properties: {
       id: {
         type: 'string',
-        description: 'news id'
+        description: 'news id',
       }
     }
   },
@@ -33,8 +51,19 @@ const schemaEdit = {
     properties: {
       title: {type: 'string'},
       description: {type: 'string'},
-    },
-  }
+      topic: {
+        type: 'object',
+        properties: {
+          connect: {
+            type: 'object',
+            properties: {
+              id: {type: 'string'},
+            },
+          },
+        }
+      }
+    }
+  },
 }
 export const newsSchema = {
   schemaId,

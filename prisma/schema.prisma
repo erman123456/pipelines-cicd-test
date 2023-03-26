@@ -11,23 +11,22 @@ datasource db {
 }
 
 model News {
-  id          Int      @id @default(autoincrement())
+  id          String    @id @default(uuid())
   title       String
   description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
-
-  topic Topic[]
+  topic       Topic[]
 }
 
 model Topic {
-  id           Int      @id @default(autoincrement())
-  article_name String   @db.VarChar(255)
+  id           String    @id @default(uuid())
+  article_name String    @db.VarChar(255)
   description  String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
   deletedAt    DateTime?
-  news         News     @relation(fields: [newsId], references: [id])
-  newsId       Int
+  news         News      @relation(fields: [newsId], references: [id])
+  newsId       String
 }

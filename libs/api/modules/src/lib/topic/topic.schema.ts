@@ -16,7 +16,7 @@ const schemaBody = {
     properties: {
       article_name: {type: 'string'},
       description: {type: 'string'},
-      newsId: {type: 'number'},
+      newsId: {type: 'string'},
     },
   }
 }
@@ -35,7 +35,7 @@ const schemaEdit = {
     properties: {
       article_name: {type: 'string'},
       description: {type: 'string'},
-      newsId: {type: 'number'},
+      newsId: {type: 'string'},
     },
   }
 }
