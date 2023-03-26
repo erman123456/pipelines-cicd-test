@@ -6,7 +6,7 @@ export async function createTopic(payload) {
   });
 }
 
-export async function updateTopic(id: number, payload: any) {
+export async function updateTopic(id: string, payload: any) {
   return prisma.topic.update({
     where: {id: id},
     data: payload
@@ -17,7 +17,7 @@ export function findAll() {
   return prisma.topic.findMany({where: {deletedAt: null}})
 }
 
-export function findOne(id: number) {
+export function findOne(id: string) {
   return prisma.topic.findFirst({
     where: {
       AND: [
@@ -28,7 +28,7 @@ export function findOne(id: number) {
   });
 }
 
-export function remove(id: number) {
+export function remove(id: string) {
   return prisma.topic.update({
     where: {
       id: id,

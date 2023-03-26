@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "News" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -12,13 +12,13 @@ CREATE TABLE "News" (
 
 -- CreateTable
 CREATE TABLE "Topic" (
-    "id" SERIAL NOT NULL,
-    "article_name" VARCHAR(255) NOT NULL,
+    "id" TEXT NOT NULL,
+    "topic_name" VARCHAR(255) NOT NULL,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "deletedAt" TIMESTAMP(3),
-    "newsId" INTEGER NOT NULL,
+    "newsId" TEXT NOT NULL,
 
     CONSTRAINT "Topic_pkey" PRIMARY KEY ("id")
 );

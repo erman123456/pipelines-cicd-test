@@ -24,7 +24,7 @@ export async function createNewsHandler(
 export async function updateNewsHandler(
   request: any, reply: FastifyReply) {
   const body = request.body;
-  const id = parseInt(request.params.id);
+  const id = request.params.id;
   try {
     const data = await updateNews(id, body);
     responseType.status = HttpStatusTransaction.CODE_SUCCESS
@@ -39,9 +39,9 @@ export async function updateNewsHandler(
   }
 }
 
-export async function findAllHandler(reply: FastifyReply) {
+export async function findAllHandler(queryParam, reply: FastifyReply) {
   try {
-    const data = await findAll();
+    const data = await findAll(queryParam);
     responseType.status = HttpStatusTransaction.CODE_SUCCESS
     responseType.message = "Success"
     responseType.payload = data
@@ -54,7 +54,7 @@ export async function findAllHandler(reply: FastifyReply) {
   }
 }
 
-export async function findOneHandler(id: number, reply: FastifyReply) {
+export async function findOneHandler(id: string, reply: FastifyReply) {
   try {
     const data = await findOne(id);
     responseType.status = HttpStatusTransaction.CODE_SUCCESS
@@ -69,7 +69,7 @@ export async function findOneHandler(id: number, reply: FastifyReply) {
   }
 }
 
-export async function deleteHandler(id: number, reply: FastifyReply) {
+export async function deleteHandler(id: string, reply: FastifyReply) {
   try {
     await remove(id);
     responseType.status = HttpStatusTransaction.CODE_SUCCESS
@@ -78,6 +78,7 @@ export async function deleteHandler(id: number, reply: FastifyReply) {
   } catch (e) {
     responseType.status = HttpStatusTransaction.CODE_SERVER_ERROR
     responseType.message = e
+    delete responseType.payload
     return reply.code(HttpStatusTransaction.CODE_SERVER_ERROR).send(responseType);
   }
 }
