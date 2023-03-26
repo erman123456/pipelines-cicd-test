@@ -30,7 +30,6 @@
     "fastify-plugin": "~4.5.0",
     "fastify-type-provider-zod": "^1.1.9",
     "fastify-zod": "^1.2.0",
-    "prisma": "^4.11.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0",
