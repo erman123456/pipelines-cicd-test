@@ -24,6 +24,7 @@ jobs:
       - checkout
       - run: npm rebuild
       - run: npm cache clean --force
+      - run: npm i
       - run: prisma migrate reset
       - run: prisma migrate dev
       - save_cache:
