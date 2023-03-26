@@ -24,13 +24,12 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-deps-{{ checksum "package.json" }}
-      - run: npm i prisma
-      - run: npm i
+      - run: npm install
+      - run: prisma migrate reset
+      - run: prisma migrate dev
       - save_cache:
           paths:
             - node_modules
           key: v1-deps-{{ checksum "package.json" }}
-      - run: prisma migrate reset
-      - run: prisma migrate dev
       - run: nx serve api
       - run: nx e2e api-e2e
